@@ -1,6 +1,6 @@
 # Privacy Policy for Xpendster
 
-**Last Updated:** [Date]
+**Last Updated:** 2025-12-11
 
 ## Introduction
 
@@ -191,7 +191,7 @@ Your continued use of the App after changes become effective constitutes accepta
 **Contact Information:**
 - **App Name**: Xpendster
 - **Package Name**: com.xpendster
-- **Contact**: [Your contact email or support address]
+- **Contact**: xpendster@gmail.com
 
 For questions, concerns, or requests regarding this Privacy Policy or your data, please contact us at [your contact information].
 
