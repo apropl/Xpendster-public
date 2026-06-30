@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Deletion - Xpendster</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+        }
+        h1 {
+            color: #2196F3;
+            border-bottom: 2px solid #2196F3;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+        h3 {
+            color: #424242;
+            margin-top: 20px;
+        }
+        .last-updated {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 30px;
+        }
+        ol, ul {
+            margin-left: 20px;
+        }
+        a {
+            color: #2196F3;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .contact-info {
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .highlight {
+            background-color: #fff3cd;
+            padding: 10px;
+            border-left: 4px solid #ffc107;
+            margin: 15px 0;
+        }
+        .steps {
+            background-color: #f0f7ff;
+            padding: 15px 15px 15px 35px;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+        .steps li {
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Account Deletion — Xpendster</h1>
+    <p class="last-updated"><strong>Last Updated:</strong> 2026-06-30</p>
+
+    <p>You can delete your Xpendster account and associated data at any time. This page explains how to do it from within the app, and how to request deletion if you no longer have the app installed.</p>
+
+    <h2>Delete your account in the app</h2>
+    <p>The fastest way to delete your account is directly inside Xpendster:</p>
+    <ol class="steps">
+        <li>Open the <strong>Xpendster</strong> app and sign in.</li>
+        <li>On the Home screen, tap the <strong>profile / account icon</strong> in the top bar.</li>
+        <li>Tap <strong>"Delete account"</strong> at the bottom of the account dialog.</li>
+        <li>Enter your password (email/password accounts) or re-authenticate with Google.</li>
+        <li>Type <strong>DELETE</strong> (all caps) in the confirmation field.</li>
+        <li>Tap <strong>"Delete account"</strong> to confirm. The deletion is immediate.</li>
+    </ol>
+
+    <h2>Request deletion by email</h2>
+    <p>If you no longer have the app installed, or cannot sign in, you can request account deletion by emailing us:</p>
+    <div class="contact-info">
+        <p><strong>Email:</strong> <a href="mailto:xpendster@gmail.com">xpendster@gmail.com</a></p>
+        <p><strong>Subject:</strong> Account deletion request</p>
+        <p>Please include the email address associated with your Xpendster account. We will process deletion requests within <strong>30 days</strong>.</p>
+    </div>
+
+    <h2>What gets deleted</h2>
+    <p>When your account is deleted, the following data is permanently removed:</p>
+    <ul>
+        <li>Your Firebase Authentication credentials (login/email)</li>
+        <li>All budget plans you created (including transactions, categories, templates, and debt data)</li>
+        <li>Your user profile and preferences stored in the cloud</li>
+        <li>Your push notification token (FCM)</li>
+        <li>Your membership records in any shared plans</li>
+    </ul>
+
+    <h2>What may remain after deletion</h2>
+    <div class="highlight">
+        <p><strong>Shared plans:</strong> Transactions, comments, and audit log entries you added to plans shared with other users will remain visible to those users. The data is attached to the plan, not your account. If you want to remove specific entries before deleting, please do so inside the app first.</p>
+    </div>
+    <ul>
+        <li>Local backups stored on your device are not affected — these are files on your device only and must be deleted manually.</li>
+        <li>Deleted data may persist in Firebase infrastructure backups for a limited period before being permanently purged.</li>
+    </ul>
+
+    <h2>App information</h2>
+    <div class="contact-info">
+        <ul>
+            <li><strong>App name:</strong> Xpendster</li>
+            <li><strong>Package name:</strong> com.xpendster</li>
+            <li><strong>Developer contact:</strong> <a href="mailto:xpendster@gmail.com">xpendster@gmail.com</a></li>
+            <li><strong>Privacy policy:</strong> <a href="privacy-policy.html">Privacy Policy</a></li>
+        </ul>
+    </div>
+</body>
+</html>
