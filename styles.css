@@ -57,6 +57,33 @@ a:hover { text-decoration: underline; }
 }
 .lang button.active { background: var(--green); color: #06210F; }
 
+/* Right-side controls + hamburger menu */
+.nav-right { position: relative; display: flex; align-items: center; gap: 12px; }
+
+.menu-btn {
+    display: inline-flex; flex-direction: column; justify-content: center; gap: 5px;
+    width: 44px; height: 42px; padding: 0 11px; cursor: pointer;
+    border: 1px solid var(--border); border-radius: 10px; background: transparent;
+}
+.menu-btn span { display: block; height: 2px; width: 100%; background: var(--text); border-radius: 2px; transition: transform .25s, opacity .2s, background .15s; }
+.menu-btn:hover span { background: var(--green); }
+.menu-btn.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.menu-btn.open span:nth-child(2) { opacity: 0; }
+.menu-btn.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+.menu {
+    position: absolute; top: calc(100% + 16px); right: 0; z-index: 40;
+    min-width: 230px; padding: 8px; display: flex; flex-direction: column;
+    background: var(--surface); border: 1px solid var(--border); border-radius: 14px;
+    box-shadow: 0 16px 44px rgba(0, 0, 0, .5);
+    opacity: 0; visibility: hidden; transform: translateY(-6px);
+    transition: opacity .18s ease, transform .18s ease, visibility .18s;
+}
+.menu.open { opacity: 1; visibility: visible; transform: translateY(0); }
+.menu a { color: var(--text); padding: 11px 14px; border-radius: 9px; font-size: 15px; font-weight: 500; }
+.menu a:hover { background: var(--navy-2); color: var(--green); text-decoration: none; }
+.menu .sep { height: 1px; background: var(--border); margin: 6px 8px; }
+
 /* ---------- Hero ---------- */
 .hero { text-align: center; padding: 72px 0 40px; }
 .hero .icon { width: 96px; height: 96px; border-radius: 22px; box-shadow: 0 12px 40px rgba(73, 219, 126, .18); }

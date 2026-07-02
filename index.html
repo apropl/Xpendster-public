@@ -25,9 +25,19 @@
     <header class="topbar">
         <div class="wrap">
             <a class="brand" href="/"><img src="assets/icon-512.png" alt="Xpendster"><b>Xpendster</b></a>
-            <div class="lang" role="group" aria-label="Language">
-                <button type="button" data-set-lang="en">EN</button>
-                <button type="button" data-set-lang="sv">SV</button>
+            <div class="nav-right">
+                <div class="lang" role="group" aria-label="Language">
+                    <button type="button" data-set-lang="en">EN</button>
+                    <button type="button" data-set-lang="sv">SV</button>
+                </div>
+                <button class="menu-btn" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+                <nav class="menu" id="menu">
+                    <a href="/" data-lang="en">Home</a><a href="/" data-lang="sv">Hem</a>
+                    <a href="privacy-policy.html" data-lang="en">Privacy Policy</a><a href="privacy-policy.html" data-lang="sv">Integritetspolicy</a>
+                    <a href="account-deletion.html" data-lang="en">Account Deletion</a><a href="account-deletion.html" data-lang="sv">Radera konto</a>
+                    <div class="sep"></div>
+                    <a href="mailto:support@xpendster.com">support@xpendster.com</a>
+                </nav>
             </div>
         </div>
     </header>
@@ -138,12 +148,7 @@
     </div>
 
     <footer>
-        <div class="wrap">
-            <nav>
-                <a href="privacy-policy.html" data-lang="en">Privacy Policy</a><a href="privacy-policy.html" data-lang="sv">Integritetspolicy</a>
-                <a href="account-deletion.html" data-lang="en">Account Deletion</a><a href="account-deletion.html" data-lang="sv">Radera konto</a>
-                <a href="mailto:support@xpendster.com">support@xpendster.com</a>
-            </nav>
+        <div class="wrap" style="justify-content:center">
             <span class="copy">© <span id="yr">2026</span> Xpendster</span>
         </div>
     </footer>
@@ -210,5 +215,6 @@
             });
         })();
     </script>
+    <script src="menu.js"></script>
 </body>
 </html>

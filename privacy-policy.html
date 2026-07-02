@@ -13,7 +13,16 @@
     <header class="topbar">
         <div class="wrap">
             <a class="brand" href="/"><img src="assets/icon-512.png" alt="Xpendster"><b>Xpendster</b></a>
-            <a href="/" style="color:var(--muted);font-size:14.5px">&larr; Home</a>
+            <div class="nav-right">
+                <button class="menu-btn" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+                <nav class="menu" id="menu">
+                    <a href="/">Home</a>
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="account-deletion.html">Account Deletion</a>
+                    <div class="sep"></div>
+                    <a href="mailto:support@xpendster.com">support@xpendster.com</a>
+                </nav>
+            </div>
         </div>
     </header>
 
@@ -313,16 +322,10 @@
     </main>
 
     <footer>
-        <div class="wrap">
-            <nav>
-                <a href="/">Home</a>
-                <a href="privacy-policy.html">Privacy Policy</a>
-                <a href="account-deletion.html">Account Deletion</a>
-                <a href="mailto:support@xpendster.com">support@xpendster.com</a>
-            </nav>
+        <div class="wrap" style="justify-content:center">
             <span class="copy">© <span id="yr">2026</span> Xpendster</span>
         </div>
     </footer>
-    <script>var y=document.getElementById('yr');if(y)y.textContent=new Date().getFullYear();</script>
+    <script src="menu.js"></script>
 </body>
 </html>
