@@ -3,61 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - Xpendster</title>
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            color: #333;
-        }
-        h1 {
-            color: #2196F3;
-            border-bottom: 2px solid #2196F3;
-            padding-bottom: 10px;
-        }
-        h2 {
-            color: #1976D2;
-            margin-top: 30px;
-        }
-        h3 {
-            color: #424242;
-            margin-top: 20px;
-        }
-        .last-updated {
-            color: #666;
-            font-style: italic;
-            margin-bottom: 30px;
-        }
-        ul, ol {
-            margin-left: 20px;
-        }
-        a {
-            color: #2196F3;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        .contact-info {
-            background-color: #f5f5f5;
-            padding: 15px;
-            border-radius: 5px;
-            margin: 20px 0;
-        }
-        .highlight {
-            background-color: #fff3cd;
-            padding: 10px;
-            border-left: 4px solid #ffc107;
-            margin: 15px 0;
-        }
-    </style>
+    <title>Privacy Policy — Xpendster</title>
+    <meta name="description" content="How Xpendster collects, uses, and protects your information.">
+    <link rel="icon" type="image/png" href="assets/icon-512.png">
+    <link rel="apple-touch-icon" href="assets/icon-512.png">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <header class="topbar">
+        <div class="wrap">
+            <a class="brand" href="/"><img src="assets/icon-512.png" alt="Xpendster"><b>Xpendster</b></a>
+            <a href="/" style="color:var(--muted);font-size:14.5px">&larr; Home</a>
+        </div>
+    </header>
+
+    <main class="legal">
+        <div class="wrap">
+            <article class="paper">
     <h1>Privacy Policy for Xpendster</h1>
-    <p class="last-updated"><strong>Last Updated:</strong> 2025-12-11</p>
+    <p class="last-updated"><strong>Last Updated:</strong> 2026-07-02</p>
 
     <h2>Introduction</h2>
     <p>Xpendster ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our mobile application Xpendster (the "App"). Please read this Privacy Policy carefully. By using the App, you agree to the collection and use of information in accordance with this policy.</p>
@@ -258,7 +222,7 @@
 
     <h3>Account Deletion</h3>
     <ul>
-        <li>To delete your account, contact us or use the account deletion feature in the App</li>
+        <li>To delete your account, use the account deletion feature in the App, or see our <a href="account-deletion.html">Account Deletion</a> page</li>
         <li>Account deletion will remove your data from our servers, but data in shared plans may remain</li>
     </ul>
 
@@ -266,10 +230,10 @@
 
     <h3>Camera Permission</h3>
     <ul>
-        <li><strong>Purpose</strong>: To scan QR codes for plan invitations</li>
-        <li><strong>When Used</strong>: Only when you choose to scan a QR code</li>
-        <li><strong>Data</strong>: We do not store or transmit any images captured by the camera</li>
-        <li><strong>Required</strong>: Yes, for QR code scanning feature</li>
+        <li><strong>Purpose</strong>: To scan QR codes for plan invitations and to scan receipts</li>
+        <li><strong>When Used</strong>: Only when you choose to scan a QR code or a receipt</li>
+        <li><strong>Data</strong>: Receipt images are processed on your device; we do not store or transmit camera images</li>
+        <li><strong>Required</strong>: Yes, for QR code and receipt scanning features</li>
     </ul>
 
     <h3>Internet Permission</h3>
@@ -311,9 +275,9 @@
         <ul>
             <li><strong>App Name</strong>: Xpendster</li>
             <li><strong>Package Name</strong>: com.xpendster</li>
-            <li><strong>Contact</strong>: xpendster@gmail.com</li>
+            <li><strong>Contact</strong>: <a href="mailto:support@xpendster.com">support@xpendster.com</a></li>
         </ul>
-        <p>For questions, concerns, or requests regarding this Privacy Policy or your data, please contact us at [your contact information].</p>
+        <p>For questions, concerns, or requests regarding this Privacy Policy or your data, please contact us at <a href="mailto:support@xpendster.com">support@xpendster.com</a>.</p>
     </div>
 
     <h2>Compliance</h2>
@@ -344,10 +308,21 @@
         <li><strong>Right to Opt-Out</strong>: Opt out of the sale of personal information (we do not sell your data)</li>
     </ul>
     <p>To exercise these rights, please contact us using the information provided above.</p>
+            </article>
+        </div>
+    </main>
 
-    <div class="highlight">
-        <p><strong>Note</strong>: This privacy policy should be customized with your specific contact information and reviewed by a legal professional to ensure compliance with all applicable laws in your jurisdiction.</p>
-    </div>
+    <footer>
+        <div class="wrap">
+            <nav>
+                <a href="/">Home</a>
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="account-deletion.html">Account Deletion</a>
+                <a href="mailto:support@xpendster.com">support@xpendster.com</a>
+            </nav>
+            <span class="copy">© <span id="yr">2026</span> Xpendster</span>
+        </div>
+    </footer>
+    <script>var y=document.getElementById('yr');if(y)y.textContent=new Date().getFullYear();</script>
 </body>
 </html>
-
