@@ -99,10 +99,6 @@ a:hover { text-decoration: underline; }
 }
 .badge-soon .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 4px rgba(73,219,126,.18); }
 
-/* ---------- Feature graphic banner ---------- */
-.banner { padding: 24px 0 8px; }
-.banner img { width: 100%; max-width: 720px; display: block; margin: 0 auto; border-radius: var(--radius); border: 1px solid var(--border); }
-
 /* ---------- Features ---------- */
 .section { padding: 56px 0; }
 .section h2 { text-align: center; font-size: clamp(24px, 4vw, 34px); margin: 0 0 8px; }
