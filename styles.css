@@ -99,6 +99,17 @@ a:hover { text-decoration: underline; }
 }
 .badge-soon .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 4px rgba(73,219,126,.18); }
 
+.hero-cta { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+.cta-email {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--green); color: #06210F;
+    border-radius: 999px; padding: 10px 20px; font-weight: 700; font-size: 14px;
+    text-decoration: none; transition: transform .12s ease, filter .12s ease;
+}
+.cta-email:hover { filter: brightness(1.06); transform: translateY(-1px); }
+.cta-note { margin: 12px 0 0; color: var(--muted); font-size: 13px; }
+.cta-note a { color: var(--green); }
+
 /* ---------- Features ---------- */
 .section { padding: 56px 0; }
 .section h2 { text-align: center; font-size: clamp(24px, 4vw, 34px); margin: 0 0 8px; }
