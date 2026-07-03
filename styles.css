@@ -99,7 +99,7 @@ a:hover { text-decoration: underline; }
 }
 .badge-soon .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 4px rgba(73,219,126,.18); }
 
-.hero-cta { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+.hero-cta { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 12px; }
 .cta-email {
     display: inline-flex; align-items: center; gap: 8px;
     background: var(--green); color: #06210F;
