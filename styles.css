@@ -190,14 +190,20 @@ html[lang="en"] span[data-lang="en"], html[lang="sv"] span[data-lang="sv"] { dis
     background: #FBFCFE; color: #1B2230; border-radius: var(--radius);
     padding: 40px clamp(20px, 5vw, 56px); max-width: 860px; margin: 0 auto;
     border: 1px solid var(--border);
+    /* Wrap long words/URLs so links (e.g. firebase.google.com/...) never overflow the card. */
+    overflow-wrap: break-word;
 }
 .legal .paper h1 { color: var(--navy); border-bottom: 3px solid var(--green); padding-bottom: 10px; margin-top: 0; }
 .legal .paper h2 { color: var(--indigo-deep); margin-top: 32px; }
 .legal .paper h3 { color: #33405A; margin-top: 20px; }
-.legal .paper a { color: var(--indigo-deep); }
+.legal .paper a { color: var(--indigo-deep); overflow-wrap: anywhere; word-break: break-word; }
 .legal .paper a:hover { color: var(--green-dim); }
 .legal .last-updated { color: #6B7688; font-style: italic; margin-bottom: 26px; }
-.legal .paper ol, .legal .paper ul { margin-left: 20px; }
+/* One moderate indent per nesting level. The old `margin-left: 20px` stacked on top of the
+   browser's default ~40px list padding, pushing 2–3 level deep items off narrow screens. */
+.legal .paper ol, .legal .paper ul { margin: 0 0 1em; padding-left: 26px; }
+.legal .paper li > ul, .legal .paper li > ol { margin: 6px 0 0; }
+.legal .paper li { margin-bottom: 4px; }
 .legal .contact-info { background: #EFF3FA; padding: 16px; border-radius: 10px; margin: 18px 0; }
 .legal .highlight { background: #FFF6DA; padding: 12px 14px; border-left: 4px solid #F0C33C; border-radius: 6px; margin: 16px 0; }
 .legal .steps { background: #EDF7F0; padding: 16px 16px 16px 36px; border-radius: 10px; margin: 16px 0; }
@@ -207,4 +213,9 @@ html[lang="en"] span[data-lang="en"], html[lang="sv"] span[data-lang="sv"] { dis
     .hero { padding: 48px 0 28px; }
     .shots img { height: 440px; }
     footer .wrap { flex-direction: column; align-items: flex-start; }
+    /* Give legal text more room on phones: smaller card padding + tighter list indent. */
+    .legal { padding: 24px 0 40px; }
+    .legal .paper { padding: 28px 18px; }
+    .legal .paper ol, .legal .paper ul { padding-left: 20px; }
+    .legal .steps { padding-left: 24px; }
 }
