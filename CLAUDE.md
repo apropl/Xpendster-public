@@ -36,7 +36,7 @@ The landing page and page chrome are **dark** (navy); long-form legal pages rend
 - CSS hides `[data-lang]` by default and reveals the one matching `<html lang>`.
 - Inline JS sets `<html lang>` from `localStorage` (`xp-lang`) or the browser language, defaulting to English, and toggles on the EN/SV buttons.
 - **When adding landing-page copy, always add both EN and SV variants**, or it will be invisible in one language.
-- The legal pages are **English only** for now (SV translation is a known follow-up).
+- The legal pages (`privacy-policy.html`, `account-deletion.html`) are **also bilingual** (EN/SV). They wrap the whole document in per-language `<div data-lang="en">` / `<div data-lang="sv">` blocks (rather than duplicating every element) and carry their own copy of the language-toggle inline script. Keep both languages in sync when editing legal copy.
 
 ## Assets
 
@@ -59,5 +59,4 @@ Merging to `main` publishes via GitHub Pages. Custom domain + HTTPS are configur
 
 ## Known follow-ups
 
-- Swedish translations of `privacy-policy.html` and `account-deletion.html`.
 - Replace the "Coming soon to Google Play" badge in `index.html` with a real "Get it on Google Play" badge + link (`https://play.google.com/store/apps/details?id=com.xpendster`) once the app is publicly live.
