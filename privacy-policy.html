@@ -14,11 +14,15 @@
         <div class="wrap">
             <a class="brand" href="/"><img src="assets/icon-512.png" alt="Xpendster"><b>Xpendster</b></a>
             <div class="nav-right">
+                <div class="lang" role="group" aria-label="Language">
+                    <button type="button" data-set-lang="en">EN</button>
+                    <button type="button" data-set-lang="sv">SV</button>
+                </div>
                 <button class="menu-btn" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
                 <nav class="menu" id="menu">
-                    <a href="/">Home</a>
-                    <a href="privacy-policy.html">Privacy Policy</a>
-                    <a href="account-deletion.html">Account Deletion</a>
+                    <a href="/" data-lang="en">Home</a><a href="/" data-lang="sv">Hem</a>
+                    <a href="privacy-policy.html" data-lang="en">Privacy Policy</a><a href="privacy-policy.html" data-lang="sv">Integritetspolicy</a>
+                    <a href="account-deletion.html" data-lang="en">Account Deletion</a><a href="account-deletion.html" data-lang="sv">Radera konto</a>
                     <div class="sep"></div>
                     <a href="mailto:support@xpendster.com">support@xpendster.com</a>
                 </nav>
@@ -29,6 +33,7 @@
     <main class="legal">
         <div class="wrap">
             <article class="paper">
+    <div data-lang="en">
     <h1>Privacy Policy for Xpendster</h1>
     <p class="last-updated"><strong>Last Updated:</strong> 2026-07-02</p>
 
@@ -317,6 +322,298 @@
         <li><strong>Right to Opt-Out</strong>: Opt out of the sale of personal information (we do not sell your data)</li>
     </ul>
     <p>To exercise these rights, please contact us using the information provided above.</p>
+    </div>
+
+    <div data-lang="sv">
+    <h1>Integritetspolicy för Xpendster</h1>
+    <p class="last-updated"><strong>Senast uppdaterad:</strong> 2026-07-02</p>
+
+    <h2>Introduktion</h2>
+    <p>Xpendster ("vi", "vår" eller "oss") är måna om att skydda din integritet. Denna integritetspolicy förklarar hur vi samlar in, använder, lämnar ut och skyddar din information när du använder vår mobilapplikation Xpendster ("Appen"). Läs denna integritetspolicy noggrant. Genom att använda Appen godkänner du insamling och användning av information i enlighet med denna policy.</p>
+
+    <h2>Information vi samlar in</h2>
+
+    <h3>1. Kontoinformation</h3>
+    <ul>
+        <li><strong>E-postadress</strong>: Samlas in när du skapar ett konto med e-post/lösenord eller Google-inloggning</li>
+        <li><strong>Användar-ID</strong>: En unik identifierare (Firebase UID) som kopplas till ditt konto</li>
+        <li><strong>Autentiseringsdata</strong>: Information som krävs för kontoautentisering och säkerhet</li>
+    </ul>
+
+    <h3>2. Ekonomi- och budgetdata</h3>
+    <ul>
+        <li><strong>Planer</strong>: Budgetplaner som du skapar eller går med i</li>
+        <li><strong>Transaktioner</strong>: Inkomster, utgifter och ekonomiska transaktioner som du registrerar</li>
+        <li><strong>Personer</strong>: Namn och information om personer i dina planer</li>
+        <li><strong>Kategorier</strong>: Transaktionskategorier som du skapar</li>
+        <li><strong>Mallar</strong>: Mallar för återkommande transaktioner</li>
+        <li><strong>Skuldkonton</strong>: Information för skuldbevakning</li>
+        <li><strong>Kommentarer</strong>: Kommentarer som du lägger till på transaktioner</li>
+        <li><strong>Ändringsloggar</strong>: Register över åtgärder i delade planer (för transparens och ansvarsskyldighet)</li>
+    </ul>
+
+    <h3>3. Användarinställningar</h3>
+    <ul>
+        <li>Visningsinställningar (kolumnsynlighet, sortering, gruppering)</li>
+        <li>Inställningar för datumformat</li>
+        <li>Aviseringsinställningar</li>
+        <li>Inställningar för anpassning av gränssnittet</li>
+    </ul>
+
+    <h3>4. Data för plandelning</h3>
+    <ul>
+        <li><strong>Medlemmar</strong>: Information om användare som delar planer med dig</li>
+        <li><strong>Inbjudningar</strong>: Inbjudningskoder och QR-koder för plandelning</li>
+        <li><strong>Roller</strong>: Din roll i delade planer (ägare, bidragsgivare, skrivskyddad)</li>
+        <li><strong>Personkopplingar</strong>: Vilken person i en plan som du representerar</li>
+    </ul>
+
+    <h3>5. Teknisk information</h3>
+    <ul>
+        <li><strong>FCM-tokens</strong>: Tokens för push-notiser som används för att skicka aviseringar till dig</li>
+        <li><strong>Enhetsinformation</strong>: Grundläggande enhetsinformation som krävs för appens funktion</li>
+        <li><strong>Nätverksstatus</strong>: Information om din internetanslutning (för synkstatus)</li>
+    </ul>
+
+    <h3>6. Säkerhetskopieringsdata</h3>
+    <ul>
+        <li>Lokala säkerhetskopior som du skapar (lagras på din enhet)</li>
+        <li>Inställningar för säkerhetskopiering</li>
+    </ul>
+
+    <h2>Hur vi använder din information</h2>
+    <p>Vi använder informationen vi samlar in för att:</p>
+    <ol>
+        <li><strong>Tillhandahålla kärntjänster</strong>:
+            <ul>
+                <li>Skapa och hantera dina budgetplaner</li>
+                <li>Lagra och synkronisera dina ekonomiska data mellan enheter</li>
+                <li>Möjliggöra funktioner för plandelning och samarbete</li>
+                <li>Skicka push-notiser om aktiviteter i planer</li>
+            </ul>
+        </li>
+        <li><strong>Autentisering och säkerhet</strong>:
+            <ul>
+                <li>Autentisera din identitet</li>
+                <li>Skydda ditt konto och dina data</li>
+                <li>Förhindra obehörig åtkomst</li>
+            </ul>
+        </li>
+        <li><strong>Förbättra användarupplevelsen</strong>:
+            <ul>
+                <li>Komma ihåg dina inställningar och preferenser</li>
+                <li>Tillhandahålla personanpassade funktioner</li>
+                <li>Upprätthålla synkstatus mellan enheter</li>
+            </ul>
+        </li>
+        <li><strong>Kommunikation</strong>:
+            <ul>
+                <li>Skicka aviseringar om planinbjudningar, medlemsändringar och andra aktiviteter i planer</li>
+                <li>Meddela dig om viktiga kontohändelser</li>
+            </ul>
+        </li>
+    </ol>
+
+    <h2>Tredjepartstjänster och SDK:er</h2>
+    <p>Vi använder följande tredjepartstjänster som kan samla in information:</p>
+
+    <h3>1. Firebase-tjänster (Google)</h3>
+    <ul>
+        <li><strong>Firebase Authentication</strong>: Hanterar användarautentisering
+            <ul>
+                <li>Integritetspolicy: <a href="https://firebase.google.com/support/privacy" target="_blank">https://firebase.google.com/support/privacy</a></li>
+                <li>Villkor för databehandling: <a href="https://firebase.google.com/terms/data-processing-terms" target="_blank">https://firebase.google.com/terms/data-processing-terms</a></li>
+            </ul>
+        </li>
+        <li><strong>Cloud Firestore</strong>: Lagrar dina appdata i molnet
+            <ul>
+                <li>Integritetspolicy: <a href="https://firebase.google.com/support/privacy" target="_blank">https://firebase.google.com/support/privacy</a></li>
+                <li>Data lagras säkert och krypteras under överföring och i vila</li>
+            </ul>
+        </li>
+        <li><strong>Firebase Cloud Messaging (FCM)</strong>: Skickar push-notiser
+            <ul>
+                <li>Integritetspolicy: <a href="https://firebase.google.com/support/privacy" target="_blank">https://firebase.google.com/support/privacy</a></li>
+                <li>Samlar in FCM-tokens för att leverera aviseringar</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h3>2. Google-inloggning</h3>
+    <ul>
+        <li><strong>Credential Manager API</strong>: Möjliggör autentisering med Google-inloggning
+            <ul>
+                <li>Integritetspolicy: <a href="https://policies.google.com/privacy" target="_blank">https://policies.google.com/privacy</a></li>
+                <li>Samlar in e-postadress och grundläggande profilinformation med ditt samtycke</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h3>3. Övriga bibliotek</h3>
+    <ul>
+        <li><strong>Coil</strong>: Bibliotek för bildladdning (ingen datainsamling)</li>
+        <li><strong>ZXing</strong>: Bibliotek för QR-kodsskanning (ingen datainsamling)</li>
+        <li><strong>MPAndroidChart</strong>: Bibliotek för diagram (ingen datainsamling)</li>
+        <li><strong>Room Database</strong>: Lokal databas (ingen extern datainsamling)</li>
+    </ul>
+
+    <h2>Datalagring och säkerhet</h2>
+
+    <h3>Lokal lagring</h3>
+    <ul>
+        <li>Dina data lagras lokalt på din enhet med Room Database</li>
+        <li>Lokala säkerhetskopior lagras på din enhet och överförs inte till oss</li>
+    </ul>
+
+    <h3>Molnlagring</h3>
+    <ul>
+        <li>När du loggar in synkroniseras dina data till Firebase Firestore (Google Cloud)</li>
+        <li>Data krypteras under överföring (HTTPS) och i vila</li>
+        <li>Vi använder Firebases säkerhetsregler för att säkerställa att endast behöriga användare kan komma åt sina data</li>
+    </ul>
+
+    <h3>Lagringstid</h3>
+    <ul>
+        <li>Dina data lagras så länge ditt konto är aktivt</li>
+        <li>Du kan radera ditt konto och dina data när som helst via appen</li>
+        <li>Raderad data kan finnas kvar i säkerhetskopior en begränsad tid innan den raderas permanent</li>
+    </ul>
+
+    <h2>Datadelning och utlämnande</h2>
+
+    <h3>Plandelning</h3>
+    <ul>
+        <li>När du delar en plan med andra användare kan de se:
+            <ul>
+                <li>Plandata (transaktioner, personer, kategorier)</li>
+                <li>Din roll och personkoppling i planen</li>
+                <li>Ändringsloggar över åtgärder du utför i planen</li>
+            </ul>
+        </li>
+        <li>Du styr vem som har åtkomst till dina delade planer via inbjudningar</li>
+    </ul>
+
+    <h3>Vi gör inte följande:</h3>
+    <ul>
+        <li>Säljer din personliga information till tredje part</li>
+        <li>Delar dina data med annonsörer</li>
+        <li>Använder dina data för marknadsföringssyften som inte rör Appen</li>
+        <li>Kommer åt dina ekonomiska data annat än i den mån det krävs för att tillhandahålla tjänsten</li>
+    </ul>
+
+    <h3>Rättsliga krav</h3>
+    <p>Vi kan lämna ut din information om det krävs enligt lag eller som svar på giltiga rättsliga förfrågningar.</p>
+
+    <h2>Dina rättigheter och val</h2>
+
+    <h3>Åtkomst och rättelse</h3>
+    <ul>
+        <li>Du kan komma åt och ändra dina data via Appen</li>
+        <li>Du kan uppdatera din kontoinformation när som helst</li>
+    </ul>
+
+    <h3>Radering av data</h3>
+    <ul>
+        <li>Du kan radera enskilda transaktioner, planer eller andra data via Appen</li>
+        <li>Du kan radera hela ditt konto, vilket tar bort dina data från våra servrar</li>
+        <li>Obs: Data i delade planer kan förbli synliga för andra medlemmar även efter att du lämnat</li>
+    </ul>
+
+    <h3>Aviseringsinställningar</h3>
+    <ul>
+        <li>Du kan styra aviseringsinställningar i appens inställningar</li>
+        <li>Du kan avstå från push-notiser (även om detta kan begränsa funktioner för plandelning)</li>
+    </ul>
+
+    <h3>Radera konto</h3>
+    <ul>
+        <li>För att radera ditt konto, använd raderingsfunktionen i Appen, eller se vår sida <a href="account-deletion.html">Radera konto</a></li>
+        <li>Radering av kontot tar bort dina data från våra servrar, men data i delade planer kan finnas kvar</li>
+    </ul>
+
+    <h2>Behörigheter vi begär</h2>
+
+    <h3>Kamerabehörighet</h3>
+    <ul>
+        <li><strong>Syfte</strong>: För att skanna QR-koder för planinbjudningar och för att skanna kvitton</li>
+        <li><strong>När den används</strong>: Endast när du väljer att skanna en QR-kod eller ett kvitto</li>
+        <li><strong>Data</strong>: Kvittobilder behandlas på din enhet; vi lagrar eller överför inte kamerabilder</li>
+        <li><strong>Krävs</strong>: Ja, för funktionerna för QR-kods- och kvittoskanning</li>
+    </ul>
+
+    <h3>Internetbehörighet</h3>
+    <ul>
+        <li><strong>Syfte</strong>: För att synkronisera dina data med Firebase och möjliggöra molnfunktioner</li>
+        <li><strong>Krävs</strong>: Ja, för molnsynkronisering</li>
+    </ul>
+
+    <h3>Behörighet för nätverksstatus</h3>
+    <ul>
+        <li><strong>Syfte</strong>: För att kontrollera internetanslutning och visa synkstatus</li>
+        <li><strong>Krävs</strong>: Ja, för synkstatusindikatorer</li>
+    </ul>
+
+    <h3>Aviseringsbehörighet</h3>
+    <ul>
+        <li><strong>Syfte</strong>: För att skicka push-notiser om aktiviteter i planer</li>
+        <li><strong>Krävs</strong>: Valfritt, men rekommenderas för funktioner för plandelning</li>
+    </ul>
+
+    <h2>Barns integritet</h2>
+    <p>Vår App är inte avsedd för barn under 13 år. Vi samlar inte medvetet in personlig information från barn under 13 år. Om du är förälder eller vårdnadshavare och tror att ditt barn har lämnat personlig information till oss, kontakta oss så att informationen kan tas bort.</p>
+
+    <h2>Internationella dataöverföringar</h2>
+    <p>Dina data kan lagras och behandlas på servrar utanför ditt bosättningsland. Genom att använda Appen samtycker du till överföringen av dina data till dessa servrar. Vi säkerställer att lämpliga skyddsåtgärder finns på plats för att skydda dina data i enlighet med denna integritetspolicy.</p>
+
+    <h2>Ändringar i denna integritetspolicy</h2>
+    <p>Vi kan uppdatera denna integritetspolicy då och då. Vi meddelar dig om eventuella ändringar genom att:</p>
+    <ul>
+        <li>Publicera den nya integritetspolicyn i Appen</li>
+        <li>Uppdatera datumet "Senast uppdaterad"</li>
+        <li>Vid väsentliga ändringar kan vi lämna ytterligare meddelande</li>
+    </ul>
+    <p>Din fortsatta användning av Appen efter att ändringarna trätt i kraft innebär att du godkänner den uppdaterade integritetspolicyn.</p>
+
+    <h2>Information om personuppgiftsansvarig</h2>
+    <div class="contact-info">
+        <p><strong>Kontaktinformation:</strong></p>
+        <ul>
+            <li><strong>Appnamn</strong>: Xpendster</li>
+            <li><strong>Paketnamn</strong>: com.xpendster</li>
+            <li><strong>Kontakt</strong>: <a href="mailto:support@xpendster.com">support@xpendster.com</a></li>
+        </ul>
+        <p>Vid frågor, funderingar eller förfrågningar om denna integritetspolicy eller dina data, kontakta oss på <a href="mailto:support@xpendster.com">support@xpendster.com</a>.</p>
+    </div>
+
+    <h2>Efterlevnad</h2>
+    <p>Denna integritetspolicy är utformad för att följa:</p>
+    <ul>
+        <li>Dataskyddsförordningen (GDPR) för användare i Europeiska unionen</li>
+        <li>California Consumer Privacy Act (CCPA) för användare i Kalifornien</li>
+        <li>Andra tillämpliga integritetslagar</li>
+    </ul>
+
+    <h2>Ytterligare information för EU-användare</h2>
+    <p>Om du befinner dig i Europeiska unionen har du ytterligare rättigheter enligt GDPR:</p>
+    <ul>
+        <li><strong>Rätt till åtkomst</strong>: Begära en kopia av dina personuppgifter</li>
+        <li><strong>Rätt till rättelse</strong>: Rätta felaktiga uppgifter</li>
+        <li><strong>Rätt till radering</strong>: Begära radering av dina uppgifter</li>
+        <li><strong>Rätt att begränsa behandling</strong>: Begränsa hur vi använder dina uppgifter</li>
+        <li><strong>Rätt till dataportabilitet</strong>: Få dina uppgifter i ett portabelt format</li>
+        <li><strong>Rätt att invända</strong>: Invända mot viss behandling av dina uppgifter</li>
+    </ul>
+    <p>För att utöva dessa rättigheter, kontakta oss med hjälp av informationen ovan.</p>
+
+    <h2>Ytterligare information för användare i Kalifornien</h2>
+    <p>Om du är bosatt i Kalifornien har du rättigheter enligt CCPA:</p>
+    <ul>
+        <li><strong>Rätt att få veta</strong>: Begära information om datainsamling och datadelning</li>
+        <li><strong>Rätt till radering</strong>: Begära radering av dina personuppgifter</li>
+        <li><strong>Rätt att välja bort</strong>: Välja bort försäljning av personuppgifter (vi säljer inte dina data)</li>
+    </ul>
+    <p>För att utöva dessa rättigheter, kontakta oss med hjälp av informationen ovan.</p>
+    </div>
             </article>
         </div>
     </main>
@@ -327,5 +624,21 @@
         </div>
     </footer>
     <script src="menu.js"></script>
+    <script>
+        (function () {
+            var buttons = document.querySelectorAll('[data-set-lang]');
+            function apply(lang) {
+                document.documentElement.lang = lang;
+                buttons.forEach(function (b) { b.classList.toggle('active', b.dataset.setLang === lang); });
+                try { localStorage.setItem('xp-lang', lang); } catch (e) {}
+            }
+            buttons.forEach(function (b) {
+                b.addEventListener('click', function () { apply(b.dataset.setLang); });
+            });
+            var saved = 'en';
+            try { saved = localStorage.getItem('xp-lang') || (navigator.language || '').slice(0, 2); } catch (e) {}
+            apply(saved === 'sv' ? 'sv' : 'en');
+        })();
+    </script>
 </body>
 </html>

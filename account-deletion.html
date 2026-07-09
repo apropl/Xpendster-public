@@ -14,11 +14,15 @@
         <div class="wrap">
             <a class="brand" href="/"><img src="assets/icon-512.png" alt="Xpendster"><b>Xpendster</b></a>
             <div class="nav-right">
+                <div class="lang" role="group" aria-label="Language">
+                    <button type="button" data-set-lang="en">EN</button>
+                    <button type="button" data-set-lang="sv">SV</button>
+                </div>
                 <button class="menu-btn" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
                 <nav class="menu" id="menu">
-                    <a href="/">Home</a>
-                    <a href="privacy-policy.html">Privacy Policy</a>
-                    <a href="account-deletion.html">Account Deletion</a>
+                    <a href="/" data-lang="en">Home</a><a href="/" data-lang="sv">Hem</a>
+                    <a href="privacy-policy.html" data-lang="en">Privacy Policy</a><a href="privacy-policy.html" data-lang="sv">Integritetspolicy</a>
+                    <a href="account-deletion.html" data-lang="en">Account Deletion</a><a href="account-deletion.html" data-lang="sv">Radera konto</a>
                     <div class="sep"></div>
                     <a href="mailto:support@xpendster.com">support@xpendster.com</a>
                 </nav>
@@ -29,6 +33,7 @@
     <main class="legal">
         <div class="wrap">
             <article class="paper">
+    <div data-lang="en">
     <h1>Account Deletion — Xpendster</h1>
     <p class="last-updated"><strong>Last Updated:</strong> 2026-07-02</p>
 
@@ -81,6 +86,62 @@
             <li><strong>Privacy policy:</strong> <a href="privacy-policy.html">Privacy Policy</a></li>
         </ul>
     </div>
+    </div>
+
+    <div data-lang="sv">
+    <h1>Radera konto — Xpendster</h1>
+    <p class="last-updated"><strong>Senast uppdaterad:</strong> 2026-07-02</p>
+
+    <p>Du kan radera ditt Xpendster-konto och tillhörande data när som helst. Den här sidan förklarar hur du gör det i appen, och hur du begär radering om du inte längre har appen installerad.</p>
+
+    <h2>Radera ditt konto i appen</h2>
+    <p>Det snabbaste sättet att radera ditt konto är direkt i Xpendster:</p>
+    <ol class="steps">
+        <li>Öppna appen <strong>Xpendster</strong> och logga in.</li>
+        <li>På startskärmen trycker du på <strong>profil-/kontoikonen</strong> i det övre fältet.</li>
+        <li>Tryck på <strong>”Radera konto”</strong> längst ned i kontodialogen.</li>
+        <li>Ange ditt lösenord (konton med e-post/lösenord) eller autentisera på nytt med Google.</li>
+        <li>Skriv <strong>DELETE</strong> (endast versaler) i bekräftelsefältet.</li>
+        <li>Tryck på <strong>”Radera konto”</strong> för att bekräfta. Raderingen sker omedelbart.</li>
+    </ol>
+
+    <h2>Begär radering via e-post</h2>
+    <p>Om du inte längre har appen installerad, eller inte kan logga in, kan du begära radering av kontot genom att mejla oss:</p>
+    <div class="contact-info">
+        <p><strong>E-post:</strong> <a href="mailto:support@xpendster.com">support@xpendster.com</a></p>
+        <p><strong>Ämne:</strong> Begäran om radering av konto</p>
+        <p>Ange den e-postadress som är kopplad till ditt Xpendster-konto. Vi behandlar raderingsbegäranden inom <strong>30 dagar</strong>.</p>
+    </div>
+
+    <h2>Vad som raderas</h2>
+    <p>När ditt konto raderas tas följande data bort permanent:</p>
+    <ul>
+        <li>Dina inloggningsuppgifter i Firebase Authentication (inloggning/e-post)</li>
+        <li>Alla budgetplaner du har skapat (inklusive transaktioner, kategorier, mallar och skulddata)</li>
+        <li>Din användarprofil och dina inställningar som lagras i molnet</li>
+        <li>Din token för push-notiser (FCM)</li>
+        <li>Dina medlemskapsposter i eventuella delade planer</li>
+    </ul>
+
+    <h2>Vad som kan finnas kvar efter radering</h2>
+    <div class="highlight">
+        <p><strong>Delade planer:</strong> Transaktioner, kommentarer och ändringsloggposter som du har lagt till i planer som delas med andra användare förblir synliga för dessa användare. Datan är kopplad till planen, inte till ditt konto. Om du vill ta bort specifika poster innan du raderar, gör det i appen först.</p>
+    </div>
+    <ul>
+        <li>Lokala säkerhetskopior som lagras på din enhet påverkas inte — det är filer som endast finns på din enhet och måste raderas manuellt.</li>
+        <li>Raderad data kan finnas kvar i Firebases infrastruktur-säkerhetskopior under en begränsad tid innan den rensas permanent.</li>
+    </ul>
+
+    <h2>Appinformation</h2>
+    <div class="contact-info">
+        <ul>
+            <li><strong>Appnamn:</strong> Xpendster</li>
+            <li><strong>Paketnamn:</strong> com.xpendster</li>
+            <li><strong>Utvecklarkontakt:</strong> <a href="mailto:support@xpendster.com">support@xpendster.com</a></li>
+            <li><strong>Integritetspolicy:</strong> <a href="privacy-policy.html">Integritetspolicy</a></li>
+        </ul>
+    </div>
+    </div>
             </article>
         </div>
     </main>
@@ -91,5 +152,21 @@
         </div>
     </footer>
     <script src="menu.js"></script>
+    <script>
+        (function () {
+            var buttons = document.querySelectorAll('[data-set-lang]');
+            function apply(lang) {
+                document.documentElement.lang = lang;
+                buttons.forEach(function (b) { b.classList.toggle('active', b.dataset.setLang === lang); });
+                try { localStorage.setItem('xp-lang', lang); } catch (e) {}
+            }
+            buttons.forEach(function (b) {
+                b.addEventListener('click', function () { apply(b.dataset.setLang); });
+            });
+            var saved = 'en';
+            try { saved = localStorage.getItem('xp-lang') || (navigator.language || '').slice(0, 2); } catch (e) {}
+            apply(saved === 'sv' ? 'sv' : 'en');
+        })();
+    </script>
 </body>
 </html>
