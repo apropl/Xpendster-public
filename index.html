@@ -137,45 +137,30 @@
                 <p class="lead" data-lang="en">A clean, fast interface with light and dark themes.</p>
                 <p class="lead" data-lang="sv">Ett rent, snabbt gränssnitt med ljust och mörkt tema.</p>
             </div>
-            <div class="wrap" style="max-width:100%">
-                <p class="shots-label" data-lang="en">Light theme</p><p class="shots-label" data-lang="sv">Ljust tema</p>
+            <div class="wrap shots-toolbar" style="max-width:100%">
+                <div class="theme-toggle" id="shot-theme" role="group" aria-label="Screenshot theme">
+                    <button type="button" data-shot-theme="light" class="active">
+                        <span data-lang="en">Light</span><span data-lang="sv">Ljust</span>
+                    </button>
+                    <button type="button" data-shot-theme="dark">
+                        <span data-lang="en">Dark</span><span data-lang="sv">Mörkt</span>
+                    </button>
+                </div>
             </div>
             <div class="wrap carousel" style="max-width:100%">
                 <button class="car-btn prev" type="button" aria-label="Previous screenshots">&lsaquo;</button>
                 <div class="shots">
                     <div class="shots-track">
-                        <img src="assets/phone_1.png" alt="Xpendster home screen with budgets" loading="lazy">
-                        <img src="assets/phone_2.png" alt="Xpendster transactions" loading="lazy">
-                        <img src="assets/phone_3.png" alt="Xpendster budgets" loading="lazy">
-                        <img src="assets/phone_4.png" alt="Xpendster insights and charts" loading="lazy">
-                        <img src="assets/phone_5.png" alt="Xpendster summary — who owes what" loading="lazy">
-                        <img src="assets/phone_6.png" alt="Xpendster settle up" loading="lazy">
-                        <img src="assets/phone_7.png" alt="Xpendster audit log" loading="lazy">
+                        <img data-shot="1" src="assets/phone_1.png" alt="Xpendster home screen with budgets" loading="lazy">
+                        <img data-shot="2" src="assets/phone_2.png" alt="Xpendster transactions" loading="lazy">
+                        <img data-shot="3" src="assets/phone_3.png" alt="Xpendster budgets" loading="lazy">
+                        <img data-shot="4" src="assets/phone_4.png" alt="Xpendster insights and charts" loading="lazy">
+                        <img data-shot="5" src="assets/phone_5.png" alt="Xpendster summary — who owes what" loading="lazy">
+                        <img data-shot="6" src="assets/phone_6.png" alt="Xpendster settle up" loading="lazy">
+                        <img data-shot="7" src="assets/phone_7.png" alt="Xpendster audit log" loading="lazy">
                     </div>
                 </div>
                 <button class="car-btn next" type="button" aria-label="Next screenshots">&rsaquo;</button>
-            </div>
-
-            <!-- Dark-theme row. Hidden automatically until assets/phone_dark_1..6.png exist (see JS). -->
-            <div class="dark-shots" id="dark-shots" hidden>
-                <div class="wrap" style="max-width:100%">
-                    <p class="shots-label" data-lang="en">Dark theme</p><p class="shots-label" data-lang="sv">Mörkt tema</p>
-                </div>
-                <div class="wrap carousel" style="max-width:100%">
-                    <button class="car-btn prev" type="button" aria-label="Previous dark screenshots">&lsaquo;</button>
-                    <div class="shots">
-                        <div class="shots-track">
-                            <img src="assets/phone_dark_1.png" alt="Xpendster home screen with budgets (dark)" loading="lazy">
-                            <img src="assets/phone_dark_2.png" alt="Xpendster transactions (dark)" loading="lazy">
-                            <img src="assets/phone_dark_3.png" alt="Xpendster budgets (dark)" loading="lazy">
-                            <img src="assets/phone_dark_4.png" alt="Xpendster insights and charts (dark)" loading="lazy">
-                            <img src="assets/phone_dark_5.png" alt="Xpendster summary — who owes what (dark)" loading="lazy">
-                            <img src="assets/phone_dark_6.png" alt="Xpendster settle up (dark)" loading="lazy">
-                            <img src="assets/phone_dark_7.png" alt="Xpendster audit log (dark)" loading="lazy">
-                        </div>
-                    </div>
-                    <button class="car-btn next" type="button" aria-label="Next dark screenshots">&rsaquo;</button>
-                </div>
             </div>
         </section>
     </main>
@@ -259,23 +244,32 @@
                 });
             }
 
-            function initGallery() {
-                var carousels = Array.prototype.slice.call(document.querySelectorAll('.carousel'))
-                    .filter(function (c) { return !c.closest('[hidden]'); });
-                carousels.forEach(initCarousel);
-                var imgs = [];
-                carousels.forEach(function (c) {
-                    imgs = imgs.concat(Array.prototype.slice.call(c.querySelectorAll('.shots-track img')));
-                });
-                setupLightbox(imgs);
-            }
+            Array.prototype.slice.call(document.querySelectorAll('.carousel')).forEach(initCarousel);
+            setupLightbox(Array.prototype.slice.call(document.querySelectorAll('.shots-track img')));
 
-            /* Reveal the dark-theme row only once its screenshots actually exist. */
-            var darkShots = document.getElementById('dark-shots');
-            var probe = new Image();
-            probe.onload = function () { if (darkShots) darkShots.hidden = false; initGallery(); };
-            probe.onerror = function () { initGallery(); };
-            probe.src = 'assets/phone_dark_1.png';
+            /* ---- Screenshot theme toggle: swap all shots between light/dark in place, keeping
+               the carousel scroll position. Choice persists across visits. ---- */
+            (function () {
+                var group = document.getElementById('shot-theme');
+                if (!group) return;
+                var shotImgs = Array.prototype.slice.call(document.querySelectorAll('.shots-track img'));
+                var shotScroll = group.closest('section').querySelector('.shots');
+                var btns = Array.prototype.slice.call(group.querySelectorAll('button'));
+                function applyTheme(theme) {
+                    var left = shotScroll ? shotScroll.scrollLeft : 0;   // remember position
+                    shotImgs.forEach(function (im) {
+                        var n = im.getAttribute('data-shot');
+                        im.src = theme === 'dark' ? 'assets/phone_dark_' + n + '.png' : 'assets/phone_' + n + '.png';
+                    });
+                    if (shotScroll) shotScroll.scrollLeft = left;        // restore position
+                    btns.forEach(function (b) { b.classList.toggle('active', b.dataset.shotTheme === theme); });
+                    try { localStorage.setItem('xp-shot-theme', theme); } catch (e) {}
+                }
+                btns.forEach(function (b) { b.addEventListener('click', function () { applyTheme(b.dataset.shotTheme); }); });
+                var savedTheme = 'light';
+                try { savedTheme = localStorage.getItem('xp-shot-theme') || 'light'; } catch (e) {}
+                if (savedTheme === 'dark') applyTheme('dark');
+            })();
         })();
     </script>
     <script src="menu.js"></script>
