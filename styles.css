@@ -126,6 +126,8 @@ a:hover { text-decoration: underline; }
 .card p { margin: 0; color: var(--muted); font-size: 14.5px; }
 
 /* ---------- Screenshots ---------- */
+.shots-label { text-align: center; color: var(--muted); font-weight: 600; font-size: 14px; letter-spacing: .04em; text-transform: uppercase; margin: 6px 0 2px; }
+.dark-shots { margin-top: 10px; }
 .shots { overflow-x: auto; padding: 6px 20px 22px; scroll-snap-type: x mandatory; }
 .shots-track { display: flex; gap: 18px; width: fit-content; margin: 0 auto; }
 .shots::-webkit-scrollbar { height: 8px; }

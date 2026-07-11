@@ -90,6 +90,18 @@
                         <p data-lang="sv">Xpendster nettoberäknar allas utgifter och gör upp med så få överföringar som möjligt.</p>
                     </div>
                     <div class="card">
+                        <div class="ico">🎯</div>
+                        <h3 data-lang="en">Budgets</h3><h3 data-lang="sv">Budgetar</h3>
+                        <p data-lang="en">Set spending limits per category or the whole plan, track them over time with history charts, and pin the ones that matter to your home screen.</p>
+                        <p data-lang="sv">Sätt utgiftsgränser per kategori eller för hela planen, följ dem över tid med historikdiagram och fäst de viktigaste på startskärmen.</p>
+                    </div>
+                    <div class="card">
+                        <div class="ico">📈</div>
+                        <h3 data-lang="en">Insights &amp; charts</h3><h3 data-lang="sv">Insikter &amp; diagram</h3>
+                        <p data-lang="en">See where the money goes — spending trends, top categories and people, income-vs-expense charts and month-end projections.</p>
+                        <p data-lang="sv">Se vart pengarna tar vägen – utgiftstrender, toppkategorier och personer, inkomst mot utgift och månadsprognoser.</p>
+                    </div>
+                    <div class="card">
                         <div class="ico">🧾</div>
                         <h3 data-lang="en">Receipt scanning</h3><h3 data-lang="sv">Kvittoskanning</h3>
                         <p data-lang="en">Snap a photo of a receipt, or a whole batch, and let Xpendster read the amounts automatically.</p>
@@ -125,19 +137,45 @@
                 <p class="lead" data-lang="en">A clean, fast interface with light and dark themes.</p>
                 <p class="lead" data-lang="sv">Ett rent, snabbt gränssnitt med ljust och mörkt tema.</p>
             </div>
+            <div class="wrap" style="max-width:100%">
+                <p class="shots-label" data-lang="en">Light theme</p><p class="shots-label" data-lang="sv">Ljust tema</p>
+            </div>
             <div class="wrap carousel" style="max-width:100%">
                 <button class="car-btn prev" type="button" aria-label="Previous screenshots">&lsaquo;</button>
-                <div class="shots" id="shots">
+                <div class="shots">
                     <div class="shots-track">
-                        <img src="assets/phone_1.png" alt="Xpendster home screen" loading="lazy">
+                        <img src="assets/phone_1.png" alt="Xpendster home screen with budgets" loading="lazy">
                         <img src="assets/phone_2.png" alt="Xpendster transactions" loading="lazy">
-                        <img src="assets/phone_3.png" alt="Xpendster summary — who owes what" loading="lazy">
-                        <img src="assets/phone_4.png" alt="Xpendster settle up" loading="lazy">
-                        <img src="assets/phone_5.png" alt="Xpendster insights" loading="lazy">
-                        <img src="assets/phone_6.png" alt="Xpendster audit log" loading="lazy">
+                        <img src="assets/phone_3.png" alt="Xpendster budgets" loading="lazy">
+                        <img src="assets/phone_4.png" alt="Xpendster insights and charts" loading="lazy">
+                        <img src="assets/phone_5.png" alt="Xpendster summary — who owes what" loading="lazy">
+                        <img src="assets/phone_6.png" alt="Xpendster settle up" loading="lazy">
+                        <img src="assets/phone_7.png" alt="Xpendster audit log" loading="lazy">
                     </div>
                 </div>
                 <button class="car-btn next" type="button" aria-label="Next screenshots">&rsaquo;</button>
+            </div>
+
+            <!-- Dark-theme row. Hidden automatically until assets/phone_dark_1..6.png exist (see JS). -->
+            <div class="dark-shots" id="dark-shots" hidden>
+                <div class="wrap" style="max-width:100%">
+                    <p class="shots-label" data-lang="en">Dark theme</p><p class="shots-label" data-lang="sv">Mörkt tema</p>
+                </div>
+                <div class="wrap carousel" style="max-width:100%">
+                    <button class="car-btn prev" type="button" aria-label="Previous dark screenshots">&lsaquo;</button>
+                    <div class="shots">
+                        <div class="shots-track">
+                            <img src="assets/phone_dark_1.png" alt="Xpendster home screen with budgets (dark)" loading="lazy">
+                            <img src="assets/phone_dark_2.png" alt="Xpendster transactions (dark)" loading="lazy">
+                            <img src="assets/phone_dark_3.png" alt="Xpendster budgets (dark)" loading="lazy">
+                            <img src="assets/phone_dark_4.png" alt="Xpendster insights and charts (dark)" loading="lazy">
+                            <img src="assets/phone_dark_5.png" alt="Xpendster summary — who owes what (dark)" loading="lazy">
+                            <img src="assets/phone_dark_6.png" alt="Xpendster settle up (dark)" loading="lazy">
+                            <img src="assets/phone_dark_7.png" alt="Xpendster audit log (dark)" loading="lazy">
+                        </div>
+                    </div>
+                    <button class="car-btn next" type="button" aria-label="Next dark screenshots">&rsaquo;</button>
+                </div>
             </div>
         </section>
     </main>
@@ -173,49 +211,71 @@
             var yr = document.getElementById('yr');
             if (yr) yr.textContent = new Date().getFullYear();
 
-            /* ---- Screenshot carousel ---- */
-            var shots = document.getElementById('shots');
-            var prevBtn = document.querySelector('.car-btn.prev');
-            var nextBtn = document.querySelector('.car-btn.next');
-            var imgs = Array.prototype.slice.call(document.querySelectorAll('.shots-track img'));
+            /* ---- Carousels (one per .carousel row) ---- */
+            function initCarousel(carousel) {
+                var shots = carousel.querySelector('.shots');
+                var prevBtn = carousel.querySelector('.car-btn.prev');
+                var nextBtn = carousel.querySelector('.car-btn.next');
+                if (!shots || !prevBtn || !nextBtn) return;
+                function step() {
+                    var first = shots.querySelector('img');
+                    return first ? first.getBoundingClientRect().width + 18 : 300;
+                }
+                function updateArrows() {
+                    var noOverflow = shots.scrollWidth <= shots.clientWidth + 2;
+                    prevBtn.disabled = noOverflow || shots.scrollLeft <= 2;
+                    nextBtn.disabled = noOverflow || shots.scrollLeft + shots.clientWidth >= shots.scrollWidth - 2;
+                }
+                prevBtn.addEventListener('click', function () { shots.scrollBy({ left: -step(), behavior: 'smooth' }); });
+                nextBtn.addEventListener('click', function () { shots.scrollBy({ left: step(), behavior: 'smooth' }); });
+                shots.addEventListener('scroll', updateArrows, { passive: true });
+                window.addEventListener('resize', updateArrows);
+                updateArrows();
+            }
 
-            function step() {
-                var first = shots.querySelector('img');
-                return first ? first.getBoundingClientRect().width + 18 : 300;
+            /* ---- Lightbox (click to zoom) over the given images ---- */
+            function setupLightbox(imgs) {
+                var lb = document.getElementById('lightbox');
+                if (!lb || !imgs.length) return;
+                var lbImg = document.getElementById('lb-img');
+                var idx = 0;
+                function show(i) {
+                    idx = (i + imgs.length) % imgs.length;
+                    lbImg.src = imgs[idx].src;
+                    lbImg.alt = imgs[idx].alt || '';
+                }
+                function openLb(i) { show(i); lb.classList.add('open'); document.body.classList.add('no-scroll'); }
+                function closeLb() { lb.classList.remove('open'); document.body.classList.remove('no-scroll'); }
+                imgs.forEach(function (im, i) { im.addEventListener('click', function () { openLb(i); }); });
+                lb.querySelector('.lb-close').addEventListener('click', closeLb);
+                lb.querySelector('.lb-prev').addEventListener('click', function (e) { e.stopPropagation(); show(idx - 1); });
+                lb.querySelector('.lb-next').addEventListener('click', function (e) { e.stopPropagation(); show(idx + 1); });
+                lb.addEventListener('click', function (e) { if (e.target === lb) closeLb(); });
+                document.addEventListener('keydown', function (e) {
+                    if (!lb.classList.contains('open')) return;
+                    if (e.key === 'Escape') closeLb();
+                    else if (e.key === 'ArrowLeft') show(idx - 1);
+                    else if (e.key === 'ArrowRight') show(idx + 1);
+                });
             }
-            function updateArrows() {
-                var noOverflow = shots.scrollWidth <= shots.clientWidth + 2;
-                prevBtn.disabled = noOverflow || shots.scrollLeft <= 2;
-                nextBtn.disabled = noOverflow || shots.scrollLeft + shots.clientWidth >= shots.scrollWidth - 2;
-            }
-            prevBtn.addEventListener('click', function () { shots.scrollBy({ left: -step(), behavior: 'smooth' }); });
-            nextBtn.addEventListener('click', function () { shots.scrollBy({ left: step(), behavior: 'smooth' }); });
-            shots.addEventListener('scroll', updateArrows, { passive: true });
-            window.addEventListener('resize', updateArrows);
-            updateArrows();
 
-            /* ---- Lightbox (click to zoom) ---- */
-            var lb = document.getElementById('lightbox');
-            var lbImg = document.getElementById('lb-img');
-            var idx = 0;
-            function show(i) {
-                idx = (i + imgs.length) % imgs.length;
-                lbImg.src = imgs[idx].src;
-                lbImg.alt = imgs[idx].alt || '';
+            function initGallery() {
+                var carousels = Array.prototype.slice.call(document.querySelectorAll('.carousel'))
+                    .filter(function (c) { return !c.closest('[hidden]'); });
+                carousels.forEach(initCarousel);
+                var imgs = [];
+                carousels.forEach(function (c) {
+                    imgs = imgs.concat(Array.prototype.slice.call(c.querySelectorAll('.shots-track img')));
+                });
+                setupLightbox(imgs);
             }
-            function openLb(i) { show(i); lb.classList.add('open'); document.body.classList.add('no-scroll'); }
-            function closeLb() { lb.classList.remove('open'); document.body.classList.remove('no-scroll'); }
-            imgs.forEach(function (im, i) { im.addEventListener('click', function () { openLb(i); }); });
-            lb.querySelector('.lb-close').addEventListener('click', closeLb);
-            lb.querySelector('.lb-prev').addEventListener('click', function (e) { e.stopPropagation(); show(idx - 1); });
-            lb.querySelector('.lb-next').addEventListener('click', function (e) { e.stopPropagation(); show(idx + 1); });
-            lb.addEventListener('click', function (e) { if (e.target === lb) closeLb(); });
-            document.addEventListener('keydown', function (e) {
-                if (!lb.classList.contains('open')) return;
-                if (e.key === 'Escape') closeLb();
-                else if (e.key === 'ArrowLeft') show(idx - 1);
-                else if (e.key === 'ArrowRight') show(idx + 1);
-            });
+
+            /* Reveal the dark-theme row only once its screenshots actually exist. */
+            var darkShots = document.getElementById('dark-shots');
+            var probe = new Image();
+            probe.onload = function () { if (darkShots) darkShots.hidden = false; initGallery(); };
+            probe.onerror = function () { initGallery(); };
+            probe.src = 'assets/phone_dark_1.png';
         })();
     </script>
     <script src="menu.js"></script>
