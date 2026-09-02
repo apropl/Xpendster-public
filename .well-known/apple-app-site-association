@@ -1,0 +1,19 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": [
+          "AUSQ9MYDMC.com.xpendster",
+          "AUSQ9MYDMC.com.xpendster.staging",
+          "AUSQ9MYDMC.com.xpendster.dev"
+        ],
+        "components": [
+          {
+            "/": "/join/*",
+            "comment": "Shared-plan invite links open the app instead of the browser."
+          }
+        ]
+      }
+    ]
+  }
+}
