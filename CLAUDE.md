@@ -53,6 +53,14 @@ If the store assets are regenerated in the app repo, re-copy them here.
 - No analytics, trackers, or third-party scripts — this site collects nothing.
 - Test by opening the HTML files directly in a browser (no server needed). Check both EN and SV, and that footer links resolve.
 
+## Branching & PR workflow
+
+**`main` is the only permanent branch** — there is no `develop` here, because `main` *is* the published site. Work on a `feat/*`, `fix/*` or `chore/*` branch, open a PR into `main`, merge.
+
+**Merge with `--merge`, never `--squash`.** Every PR so far (#1–#8) used a real merge commit and `main`'s history is consistent because of it. The sibling repos carry the same rule for the same reason: squashing rewrites a PR's commits into a new one, so the branch's commits never become ancestors of `main` and any later PR from a long-lived branch re-diffs against a stale common ancestor, listing the whole history again. The Android repo hit that for real (PRs #205 and #210 each showed 100+ commits). One permanent branch makes the damage smaller here, not absent — keep the histories honest.
+
+Delete a feature branch after its PR merges. Several stale ones (`feat/hero-*`, `feat/nav-menu`, `feat/landing-site`, `chore/nojekyll`) are still on the remote from earlier work.
+
 ## Deploy
 
 Merging to `main` publishes via GitHub Pages. Custom domain + HTTPS are configured in the repo's **Settings → Pages** plus Cloudflare DNS (A records to GitHub Pages IPs for the apex, `www` CNAME → `apropl.github.io`).
