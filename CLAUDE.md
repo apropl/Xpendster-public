@@ -67,4 +67,4 @@ Merging to `main` publishes via GitHub Pages. Custom domain + HTTPS are configur
 
 ## Known follow-ups
 
-- Replace the "Coming soon to Google Play" badge in `index.html` with a real "Get it on Google Play" badge + link (`https://play.google.com/store/apps/details?id=com.xpendster`) once the app is publicly live.
+- The hero badge reads "Coming soon to Android & iOS" (both platforms are in active development; iOS reached its first TestFlight staging build 2026-09-22). Once each store listing goes **publicly** live (neither is yet — Play Store releases currently auto-promote to the internal track only, pending an account transfer; iOS has shipped no store build at all), replace the relevant half of the badge with a real install badge + link: Google Play at `https://play.google.com/store/apps/details?id=com.xpendster`, the App Store link once one exists. Do the two independently — they will not go live on the same day.
