@@ -1,15 +1,15 @@
 # Privacy Policy for Xpendster
 
-**Last Updated:** 2025-12-11
+**Last Updated:** 2026-11-02
 
 ## Introduction
 
-Xpendster ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our mobile application Xpendster (the "App"). Please read this Privacy Policy carefully. By using the App, you agree to the collection and use of information in accordance with this policy.
+Xpendster ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use Xpendster on Android, iPhone or the web (together, the "App"). Please read this Privacy Policy carefully. By using the App, you agree to the collection and use of information in accordance with this policy.
 
 ## Information We Collect
 
 ### 1. Account Information
-- **Email Address**: Collected when you create an account using email/password or Google Sign-In
+- **Email Address**: Collected when you create an account using email/password, Google Sign-In or Sign in with Apple. If you choose Apple's "Hide My Email", we receive a private relay address from Apple instead of your own.
 - **User ID**: A unique identifier (Firebase UID) assigned to your account
 - **Authentication Data**: Information required for account authentication and security
 
@@ -86,11 +86,15 @@ We use the following third-party services that may collect information:
   - Collects FCM tokens to deliver notifications
 
 ### 2. Google Sign-In
-- **Credential Manager API**: Enables Google Sign-In authentication
+- Lets you sign in with your Google Account. Google shares your email address and basic profile information (name and profile picture) with your consent.
   - Privacy Policy: https://policies.google.com/privacy
-  - Collects email address and basic profile information with your consent
 
-### 3. Other Libraries
+### 3. Sign in with Apple
+- Lets you sign in with your Apple Account. Apple shares your email address (or a private relay address) and an account identifier with us.
+- When you remove Apple as a way to sign in, or delete your account, we ask Apple to revoke Xpendster's access, so Xpendster also disappears from Sign in with Apple in your Apple Account settings.
+- Privacy Policy: https://www.apple.com/legal/privacy/
+
+### 4. Other Libraries
 - **Coil**: Image loading library (no data collection)
 - **ZXing**: QR code scanning library (no data collection)
 - **MPAndroidChart**: Chart rendering library (no data collection)
@@ -99,7 +103,8 @@ We use the following third-party services that may collect information:
 ## Data Storage and Security
 
 ### Local Storage
-- Your data is stored locally on your device using Room Database
+- On Android and iPhone, your data is stored locally on your device.
+- On the web, your data and your sign-in are stored in your browser's private storage on your computer. Signing out deletes both from the browser. If you use the web app without an account, your data exists only in that browser, and clearing the browser's site data removes it.
 - Local backups are stored on your device and are not transmitted to us
 
 ### Cloud Storage
@@ -191,9 +196,9 @@ Your continued use of the App after changes become effective constitutes accepta
 **Contact Information:**
 - **App Name**: Xpendster
 - **Package Name**: com.xpendster
-- **Contact**: xpendster@gmail.com
+- **Contact**: support@xpendster.com
 
-For questions, concerns, or requests regarding this Privacy Policy or your data, please contact us at [your contact information].
+For questions, concerns, or requests regarding this Privacy Policy or your data, please contact us at support@xpendster.com.
 
 ## Compliance
 
