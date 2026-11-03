@@ -1,6 +1,6 @@
 # Privacy Policy for Xpendster
 
-**Last Updated:** 2026-11-02
+**Last Updated:** 2026-11-03
 
 ## Introduction
 
