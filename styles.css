@@ -217,6 +217,14 @@ html[lang="en"] span[data-lang="en"], html[lang="sv"] span[data-lang="sv"] { dis
 .legal .highlight { background: #FFF6DA; padding: 12px 14px; border-left: 4px solid #F0C33C; border-radius: 6px; margin: 16px 0; }
 .legal .steps { background: #EDF7F0; padding: 16px 16px 16px 36px; border-radius: 10px; margin: 16px 0; }
 .legal .steps li { margin-bottom: 8px; }
+.legal details.faq { border-bottom: 1px solid #E3E8F0; padding: 4px 0; }
+.legal details.faq summary { cursor: pointer; font-weight: 600; color: #1B2230; padding: 10px 0; list-style-position: inside; }
+.legal details.faq summary:hover { color: var(--indigo-deep); }
+.legal details.faq[open] summary { color: var(--indigo-deep); }
+.legal details.faq > *:not(summary) { margin-left: 2px; }
+.legal .faq-fig { margin: 14px 0 18px; display: flex; flex-direction: column; gap: 10px; max-width: 420px; }
+.legal .faq-fig img { width: 100%; height: auto; border-radius: 14px; display: block; }
+.legal .faq-fig figcaption { font-size: 13px; color: #6B7688; }
 
 @media (max-width: 640px) {
     .hero { padding: 48px 0 28px; }
